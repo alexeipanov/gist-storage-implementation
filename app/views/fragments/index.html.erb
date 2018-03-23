@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Fragments</h1>
+<p>Total fragments in DB: <%= @total_count %></p>
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fragments.each do |fragment| %>
+      <% cache fragment do %>
+      <tr>
+        <td><%= fragment.preview_value %></td>
+        <td><%= link_to 'Show', fragment %></td>
+      </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fragment', new_fragment_path %>

@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+<% cache @fragment do %>
+  <p>
+    <strong>Value:</strong>
+    <%= @fragment.value %>
+  </p>
+
+  <%= link_to 'Back', fragments_path %>
+<% end %>
